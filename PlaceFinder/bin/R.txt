@@ -51,7 +51,14 @@ int drawable common_signin_btn_text_normal_light 0x7f020015
 int drawable common_signin_btn_text_pressed_dark 0x7f020016
 int drawable common_signin_btn_text_pressed_light 0x7f020017
 int drawable ic_launcher 0x7f020018
-int id action_settings 0x7f050006
+int id action_settings 0x7f05000d
+int id buttonValidate 0x7f05000c
+int id contactN1 0x7f050006
+int id contactN2 0x7f050007
+int id contactN3 0x7f050008
+int id contactW1 0x7f050009
+int id contactW2 0x7f05000a
+int id contactW3 0x7f05000b
 int id hybrid 0x7f050004
 int id map 0x7f050005
 int id none 0x7f050000
@@ -59,6 +66,7 @@ int id normal 0x7f050001
 int id satellite 0x7f050002
 int id terrain 0x7f050003
 int layout activity_google_map 0x7f030000
+int layout choice_activity 0x7f030001
 int menu google_map 0x7f090000
 int string action_settings 0x7f060016
 int string app_name 0x7f060015

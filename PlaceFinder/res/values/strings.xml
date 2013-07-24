@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlaceFinder</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="mapKey">80:B9:B0:A1:DF:BF:58:54:EB:0A:9F:82:F6:D2:54:40</string>
+
+</resources>

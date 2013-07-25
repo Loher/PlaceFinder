@@ -10,5 +10,6 @@
     <string name="W">W</string>
     <string name="degre">°</string>
     <string name="point">.</string>
+    <string name="help">Saisir des coordonnées au format DM.d</string>
 
 </resources>

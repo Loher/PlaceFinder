@@ -40,9 +40,6 @@ public class GoogleMapActivity extends FragmentActivity implements
 			String longitude = intent.getStringExtra("longitude");
 			String latitude = intent.getStringExtra("latitude");
 			
-			System.err.println("longitude : " + longitude);
-			System.err.println("latitude : " + latitude);
-			
 			markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
 					.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
 		}

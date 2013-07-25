@@ -2,11 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
     android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/help"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50dp" >
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp" >
 
         <TextView
             android:id="@+id/N"
@@ -53,7 +66,9 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50dp" >
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp" >
 
         <TextView
             android:id="@+id/W"
@@ -102,6 +117,7 @@
         android:id="@+id/buttonValidate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:onClick="search"
         android:text="Search" />
 

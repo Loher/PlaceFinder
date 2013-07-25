@@ -182,18 +182,24 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020018;
     }
     public static final class id {
-        public static final int action_settings=0x7f05000d;
-        public static final int buttonValidate=0x7f05000c;
-        public static final int contactN1=0x7f050006;
-        public static final int contactN2=0x7f050007;
-        public static final int contactN3=0x7f050008;
-        public static final int contactW1=0x7f050009;
-        public static final int contactW2=0x7f05000a;
-        public static final int contactW3=0x7f05000b;
+        public static final int N=0x7f050006;
+        public static final int W=0x7f05000c;
+        public static final int action_settings=0x7f050013;
+        public static final int buttonValidate=0x7f050012;
+        public static final int contactN1=0x7f050007;
+        public static final int contactN2=0x7f050009;
+        public static final int contactN3=0x7f05000b;
+        public static final int contactW1=0x7f05000d;
+        public static final int contactW2=0x7f05000f;
+        public static final int contactW3=0x7f050011;
+        public static final int degreN=0x7f050008;
+        public static final int degreW=0x7f05000e;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f050005;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
+        public static final int pointN=0x7f05000a;
+        public static final int pointW=0x7f050010;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
     }
@@ -205,6 +211,8 @@ containing a value of this type.
         public static final int google_map=0x7f090000;
     }
     public static final class string {
+        public static final int N=0x7f06001a;
+        public static final int W=0x7f06001b;
         public static final int action_settings=0x7f060016;
         public static final int app_name=0x7f060015;
         /**   Title for notification shown when GooglePlayServices needs to be
@@ -285,9 +293,11 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f06000e;
+        public static final int degre=0x7f06001c;
         public static final int hello_world=0x7f060017;
         public static final int mapKey=0x7f060019;
         public static final int menu_settings=0x7f060018;
+        public static final int point=0x7f06001d;
     }
     public static final class style {
         /** 

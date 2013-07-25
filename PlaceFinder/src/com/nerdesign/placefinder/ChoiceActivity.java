@@ -1,13 +1,11 @@
 package com.nerdesign.placefinder;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.nerdesign.placefinder.controller.ChoiceController;
 
 public class ChoiceActivity extends Activity{
@@ -41,10 +39,8 @@ public class ChoiceActivity extends Activity{
 		double w2 = Double.parseDouble(((EditText) findViewById(R.id.contactW2)).getText().toString());
 		double w3 = Double.parseDouble(((EditText) findViewById(R.id.contactW3)).getText().toString());
 		
-		latitude = "" + (n1 + ((n3 / 60) + n2) / 60);
-		longitude = "-" + (w1 + ((w3 / 60) + w2) / 60);
-		
-//		Degrees = D + ((S/60)+M)/60
+		latitude = "" + (n1 + (n2 + (n3/1000))/60);
+		longitude = "-" + (w1 + (w2 + (w3/1000))/60);
 		
 		controller.search(longitude, latitude);
 	}

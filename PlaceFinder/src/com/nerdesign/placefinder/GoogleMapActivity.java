@@ -7,7 +7,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,8 +30,6 @@ public class GoogleMapActivity extends FragmentActivity implements
 
 		googleMap = ((SupportMapFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.map)).getMap();
-		marker = googleMap.addMarker(new MarkerOptions().title("Vous êtes ici")
-				.position(new LatLng(0, 0)));
 		
 		Intent intent = getIntent();
 		
@@ -42,6 +39,9 @@ public class GoogleMapActivity extends FragmentActivity implements
 			
 			markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
 					.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
+			
+			googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
+					Double.parseDouble(latitude), Double.parseDouble(longitude)), 15));
 		}
 
 	}
@@ -94,17 +94,16 @@ public class GoogleMapActivity extends FragmentActivity implements
 
 	@Override
 	public void onLocationChanged(final Location location) {
-		// On affiche dans un Toat la nouvelle Localisation
-		final StringBuilder msg = new StringBuilder("lat : ");
-		msg.append(location.getLatitude());
-		msg.append("; lng : ");
-		msg.append(location.getLongitude());
-		googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-				location.getLatitude(), location.getLongitude()), 15));
-		marker.setPosition(new LatLng(location.getLatitude(), location
-				.getLongitude()));
-		Toast.makeText(this, msg.toString(), Toast.LENGTH_SHORT).show();
-
+		
+		if(marker != null){
+			marker.setPosition(new LatLng(location.getLatitude(), location
+					.getLongitude()));
+		}
+		else{
+			marker = googleMap.addMarker(new MarkerOptions().title("Vous êtes ici")
+					.position(new LatLng(location.getLatitude(), location
+							.getLongitude())));
+		}	
 	}
 
 	@Override

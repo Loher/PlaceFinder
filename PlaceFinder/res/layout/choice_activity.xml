@@ -9,24 +9,38 @@
         android:id="@+id/helpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/help"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/help"
         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/N" />
+
+        <RadioButton
+            android:id="@+id/radioS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/S" />
+
+    </RadioGroup>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp" >
-
-        <TextView
-            android:id="@+id/N"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/N"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <EditText
             android:id="@+id/contactN1"
@@ -64,18 +78,31 @@
             android:inputType="numberDecimal" />
     </LinearLayout>
 
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/W" />
+
+        <RadioButton
+            android:id="@+id/radioE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/E" />
+    </RadioGroup>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp" >
-
-        <TextView
-            android:id="@+id/W"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/W"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <EditText
             android:id="@+id/contactW1"

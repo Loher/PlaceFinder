@@ -8,6 +8,8 @@
     <string name="mapKey">80:B9:B0:A1:DF:BF:58:54:EB:0A:9F:82:F6:D2:54:40</string>
     <string name="N">N</string>
     <string name="W">W</string>
+    <string name="S">S</string>
+    <string name="E">E</string>
     <string name="degre">°</string>
     <string name="point">.</string>
     <string name="help">Saisir des coordonnées au format DM.d</string>

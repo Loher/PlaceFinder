@@ -2,7 +2,6 @@ package com.nerdesign.placefinder.controller;
 
 import android.content.Intent;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.nerdesign.placefinder.ChoiceActivity;
 import com.nerdesign.placefinder.GoogleMapActivity;
 

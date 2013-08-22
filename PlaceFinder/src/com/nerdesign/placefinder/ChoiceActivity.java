@@ -29,7 +29,7 @@ public class ChoiceActivity extends Activity{
 	}
 	
 	public void search(View view){
-		
+		 
 		String latitude = "0";
 		String longitude = "0";
 		

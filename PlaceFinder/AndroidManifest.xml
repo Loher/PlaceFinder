@@ -8,10 +8,6 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="8" />
 
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-
     <permission
         android:name="com.tutos.android.gmapv2.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
@@ -48,7 +44,11 @@
         </activity>
         <activity android:name="com.nerdesign.placefinder.GoogleMapActivity" >
         </activity>
-
+        
+ 		<meta-data  
+        	android:name="com.google.android.gms.version"
+        	android:value="5077000" />
+ 		
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDdA2kJKfzOoPJLego6Z_QZRw2ie40wnDA" />

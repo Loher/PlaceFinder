@@ -6,7 +6,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.Menu;
+
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,6 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.nerdesign.placefinder.MySupportMapFragment.MapViewCreatedListener;
 
 public class GoogleMapActivity extends FragmentActivity implements
 		LocationListener {
@@ -27,23 +30,30 @@ public class GoogleMapActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_google_map);
-
-		googleMap = ((SupportMapFragment) getSupportFragmentManager()
-				.findFragmentById(R.id.map)).getMap();
 		
-		Intent intent = getIntent();
+		MySupportMapFragment mySupportMapFRagment = new MySupportMapFragment();
 		
-		if(intent != null){
-			String longitude = intent.getStringExtra("longitude");
-			String latitude = intent.getStringExtra("latitude");
+		MapViewCreatedListener mapViewCreatedListener = new MapViewCreatedListener() {
 			
-			markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
-					.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
-			
-			googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-					Double.parseDouble(latitude), Double.parseDouble(longitude)), 15));
-		}
-
+			@Override
+			public void onMapCreated() {
+				googleMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+				
+				Intent intent = getIntent();
+				
+				if(intent != null){
+					String longitude = intent.getStringExtra("longitude");
+					String latitude = intent.getStringExtra("latitude");
+					
+					markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
+							.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
+					
+					googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
+							Double.parseDouble(latitude), Double.parseDouble(longitude)), 15));
+				}
+			}
+		};
+		
 	}
 
 	@Override
@@ -57,7 +67,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 	public void onResume() {
 		super.onResume();
 
-		// Obtention de la référence du service
+		// Obtention de la rÔøΩfÔøΩrence du service
 		locationManager = (LocationManager) this
 				.getSystemService(LOCATION_SERVICE);
 
@@ -71,12 +81,12 @@ public class GoogleMapActivity extends FragmentActivity implements
 	public void onPause() {
 		super.onPause();
 
-		// On appelle la méthode pour se désabonner
+		// On appelle la mÔøΩthode pour se dÔøΩsabonner
 		desabonnementGPS();
 	}
 
 	/**
-	 * Méthode permettant de s'abonner à la localisation par GPS.
+	 * MÔøΩthode permettant de s'abonner ÔøΩ la localisation par GPS.
 	 */
 	public void abonnementGPS() {
 		// On s'abonne
@@ -85,7 +95,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 	}
 
 	/**
-	 * Méthode permettant de se désabonner de la localisation par GPS.
+	 * MÔøΩthode permettant de se dÔøΩsabonner de la localisation par GPS.
 	 */
 	public void desabonnementGPS() {
 		// Si le GPS est disponible, on s'y abonne
@@ -100,7 +110,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 					.getLongitude()));
 		}
 		else{
-			marker = googleMap.addMarker(new MarkerOptions().title("Vous êtes ici")
+			marker = googleMap.addMarker(new MarkerOptions().title("Vous ÔøΩtes ici")
 					.position(new LatLng(location.getLatitude(), location
 							.getLongitude())));
 		}	
@@ -108,7 +118,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 
 	@Override
 	public void onProviderDisabled(final String provider) {
-		// Si le GPS est désactivé on se désabonne
+		// Si le GPS est dÔøΩsactivÔøΩ on se dÔøΩsabonne
 		if ("gps".equals(provider)) {
 			desabonnementGPS();
 		}
@@ -116,7 +126,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 
 	@Override
 	public void onProviderEnabled(final String provider) {
-		// Si le GPS est activé on s'abonne
+		// Si le GPS est activÔøΩ on s'abonne
 		if ("gps".equals(provider)) {
 			abonnementGPS();
 		}

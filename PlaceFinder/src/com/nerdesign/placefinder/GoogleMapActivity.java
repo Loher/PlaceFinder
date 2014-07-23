@@ -40,7 +40,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 				String longitude = intent.getStringExtra("longitude");
 				String latitude = intent.getStringExtra("latitude");
 				
-				markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
+				markerTarget = googleMap.addMarker(new MarkerOptions().title("Target!")
 						.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
 				
 				googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
@@ -104,7 +104,7 @@ public class GoogleMapActivity extends FragmentActivity implements
 					.getLongitude()));
 		}
 		else{
-			marker = googleMap.addMarker(new MarkerOptions().title("Vous �tes ici")
+			marker = googleMap.addMarker(new MarkerOptions().title("Me")
 					.position(new LatLng(location.getLatitude(), location
 							.getLongitude())));
 		}	

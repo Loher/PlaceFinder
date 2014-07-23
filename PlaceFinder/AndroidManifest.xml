@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nerdesign.placefinder"
-    android:versionCode="4"
-    android:versionName="1.2" >
+    android:versionCode="5"
+    android:versionName="1.3" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -51,7 +51,7 @@
  		
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDdA2kJKfzOoPJLego6Z_QZRw2ie40wnDA" />
+            android:value="AIzaSyDxWLku0bP-gxvTNNQr2Onj_wJ8Oi4Ooic" />
 <!--         debug key : AIzaSyBdJgbeteqaLhojoqRWQlW881qZMJljQBQ -->
 <!--         release key : AIzaSyDdA2kJKfzOoPJLego6Z_QZRw2ie40wnDA -->
     </application>

@@ -31,29 +31,23 @@ public class GoogleMapActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_google_map);
 		
-		MySupportMapFragment mySupportMapFRagment = new MySupportMapFragment();
-		
-		MapViewCreatedListener mapViewCreatedListener = new MapViewCreatedListener() {
 			
-			@Override
-			public void onMapCreated() {
-				googleMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			googleMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			
+			Intent intent = getIntent();
+			
+			if(intent != null){
+				String longitude = intent.getStringExtra("longitude");
+				String latitude = intent.getStringExtra("latitude");
 				
-				Intent intent = getIntent();
+				markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
+						.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
 				
-				if(intent != null){
-					String longitude = intent.getStringExtra("longitude");
-					String latitude = intent.getStringExtra("latitude");
-					
-					markerTarget = googleMap.addMarker(new MarkerOptions().title("Cible")
-							.position(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude))));
-					
-					googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-							Double.parseDouble(latitude), Double.parseDouble(longitude)), 15));
-				}
+				googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
+						Double.parseDouble(latitude), Double.parseDouble(longitude)), 15));
 			}
-		};
-		
+			
+			
 	}
 
 	@Override
